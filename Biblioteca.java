@@ -1,32 +1,48 @@
-import java.util.ArrayList;
-import java.util.List;
-
+import java.util.LinkedList;
 public class Biblioteca {
-    /**
-     * Clase Biblioteca
-     * Explicación: Esta clase representa una biblioteca que almacena libros disponibles de la biblioteca. En este caso, se utiliza un ArrayList para
-     * almacenar los libros disponibles y da acceso directo a los lirbos disponibles
-     * a los elementos.
-     * Complejidad temporal: O(1) - Tiempo constante.
-     */
-    // Atributo
-    private List<Libro> librosDisponibles;
+    //Atributos
+    // Lista para almacenar los libros disponibles en la biblioteca
+    private LinkedList<Libro> librosDisponibles = new LinkedList<>();
 
-    // Constructor
-    public Biblioteca() {
-        librosDisponibles = new ArrayList<>(); // Inicializa la lista de libros disponibles como un ArrayList
+
+
+    // Método para registrar un libro en la biblioteca
+    public void registrarLibro(Libro Libro) {
+        librosDisponibles.add(Libro);
+
+    }
+    // Método para buscar un libro por título
+    public Libro buscarLibro(String titulo) {
+        Libro libroEncontrado = null;
+
+    // Recorrido aa la lista de libros disponibles
+        for (Libro libro : librosDisponibles) {
+            if (libro.getTituloLibro().equalsIgnoreCase(titulo)) {
+                libroEncontrado = libro;
+                break;
+            }
+        }
+        return libroEncontrado;// Devolvemos el libro encontrado (o null si no se encontró)
     }
 
-    // Método para registrar un libro
-    public void registrarLibro(Libro libro) {
-        librosDisponibles.add(libro); // Agrega un libro a la lista de libros disponibles
-    }
 
-    // Método para mostrar la información de todos los libros disponibles
-    public List<Libro> mostrarLibrosDisponibles() {
-        return librosDisponibles; // Devuelve la lista de libros disponibles
+    // Método para mostrar los libros disponibles en la biblioteca
+    public void mostrarLibrosDisponibles() {
+        if (librosDisponibles.isEmpty()) {
+            System.out.println("No hay libros disponibles en la biblioteca.");
+        } else {
+            System.out.println("Libros disponibles en la biblioteca:");
+            System.out.println("----------------------");
+            for (Libro libro : librosDisponibles) {
+                System.out.println("Título: " + libro.getTituloLibro());
+                System.out.println("Autor: " + libro.getAutor());
+                System.out.println("Número de páginas: " + libro.getNumeroPaginas());
+                System.out.println("----------------------");
+            }
+        }
     }
 }
+
 
 
 

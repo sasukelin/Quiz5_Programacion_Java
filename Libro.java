@@ -4,61 +4,74 @@ public class Libro  {
     private int numeroPaginas;
 
     /**
-     * Constructor de la clase Libro
-     * Explicación: Crea una instancia de la clase Libro con los atributos proporcionados.
-     * @param titulo Una cadena de caracteres que representa el título del libro.
-     * @param autor  Una cadena de caracteres que representa el autor del libro.
-     * @param numeroPaginas Un entero que representa el número de páginas del libro.
-     * Complejidad temporal: O(1) - Tiempo constante.
+     * clase Libro
      */
 
-    public Libro(String titulo, String autor, int numeroPaginas) {
-        this.tituloLibro = titulo;
-        this.autor = autor;
-        this.numeroPaginas = numeroPaginas;
+
+        /**
+         * Método constuctor para inicializar los atributos de la clase
+         * @param tituloLibro titulo del libro
+         * @param autor autor del libro
+         * @param numeroPaginas numero de paginas del libro
+         *
+         * Complejidad temporal: O(1) Tiempo constante
+         */
+        public  Libro (String  tituloLibro, String  autor, int  numeroPaginas){
+            this. tituloLibro =  tituloLibro;
+            this. autor =  autor;
+            this.numeroPaginas =numeroPaginas;
+
+        }
+
+        /**
+         * Método para obtener el titulo del libro
+         * @return Retorna el titulo del libro
+         *
+         * Complejidad temporal: O(1) Tiempo constante
+         */
+        public String getTituloLibro() {
+            return tituloLibro;
+        }
+        /**
+         * Método para  modificar el titulo del libro
+         * @set establece o modifica el titulo del libro
+         *
+         * Complejidad temporal: O(1) Tiempo constante
+         */
+        public void settituloLibro() {
+            this.tituloLibro = tituloLibro;
+        }
+        /**
+         * Método para obtener el autor del libro
+         * @return Retorna el autor  del libro
+         *
+         * Complejidad temporal: O(1) Tiempo constante
+         */
+        public String getAutor() {
+            return autor;
+        }
+        /**
+         * Método para  modificar el autor del libro
+         * @set establece o modifica el autor  del libro
+         *
+         * Complejidad temporal: O(1) Tiempo constante
+         */
+        public void setAutor(String autor) {
+            this.autor = autor;
+        }
+        /**
+         * Método para obtener el numero de paginas del libro
+         * @return Retorna el numero de paginas  del libro
+         *
+         * Complejidad temporal: O(1) Tiempo constante
+         */
+        public int getNumeroPaginas() {
+            return numeroPaginas;
+        }
+
+
+
+
+
+
     }
-
-    /**
-     * Explicación: Este método devuelve el título del libro.
-     * Método para obtener el título del libro
-     *
-     * @return titulo
-     * Complejidad temporal: O(1) - Tiempo constante.
-     */
-    public String getTitulo() {
-        return tituloLibro;
-    }
-
-    /**
-     * Explicación: Este método devuelve el título del libro.
-     * Explicación: Este método devuelve el autor del libro.
-     * @return autor
-     * Complejidad temporal: O(1) - Tiempo constante.
-     */
-    public String getAutor() {
-        return autor;
-    }
-
-    /**
-     * Método para obtener el número de páginas del libro
-     * Explicación: Este método devuelve el número de páginas del libro.
-     * @return numPaginas
-     * Complejidad temporal: O(1) - Tiempo constante.
-     */
-    public int getNumeroPaginas() {
-        return numeroPaginas;
-    }
-
-    /**
-     * Método para mostrar la información del libro
-     * Explicación: Este método imprime la información del libro, incluyendo el título, el autor y el número de páginas.
-     * Complejidad temporal: O(1) - Tiempo constante.
-     */
-    public void info() {
-        System.out.println("Titulo: " + tituloLibro);
-        System.out.println("Autor: " + autor);
-        System.out.println("Numero De Paginas: " + numeroPaginas);
-    }
-
-}
-
